@@ -1,11 +1,12 @@
 import styled from "styled-components";
 import NavBar from "./components/NavBar";
+import { Home } from "./pages/Home";
 
 const Container = styled.div``;
 function App() {
   return (
     <Container>
-      <h1>Ecommerce</h1>
+      <Home />
     </Container>
   );
 }
