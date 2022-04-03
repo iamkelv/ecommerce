@@ -1,3 +1,5 @@
+import { Badge } from "@material-ui/core";
+import { Search, ShoppingCartOutlined } from "@mui/icons-material";
 import React from "react";
 import styled from "styled-components";
 
@@ -8,16 +10,49 @@ const Container = styled.div`
 const Wrapper = styled.div`
   padding: 10px 20px;
   display: flex;
+  align-items: center;
   justify-content: space-between;
 `;
 const Left = styled.div`
   flex: 1;
+  display: flex;
+  align-items: center;
+`;
+const Language = styled.span`
+  cursor: pointer;
+  font-size: 14px;
+  align-items: center;
+`;
+const SearchContainer = styled.div`
+  border: 0.5px solid lightgray;
+  display: flex;
+  align-items: center;
+  margin-left: 25px;
+  padding: 5px;
+`;
+const Input = styled.input`
+  border: none;
+  transition: all 300ms ease;
+  &:focus {
+    border: none;
+    outline: none;
+  }
 `;
 const Center = styled.div`
-  flex: 1;
+  flex: 2;
+  text-align: center;
+`;
+const Logo = styled.h1`
+  font-weight: bold;
 `;
 const Right = styled.div`
   flex: 1;
+  display: flex;
+  justify-content: flex-end;
+`;
+const MenuItem = styled.div`
+  cursor: pointer;
+  margin-left: 25px;
 `;
 
 const NavBar = () => {
@@ -25,15 +60,23 @@ const NavBar = () => {
     <Container>
       <Wrapper>
         <Left>
-          Et Lorem cupidatat exercitation dolor sint.Laborum nisi qui irure in
-          ut amet fugiat aute commodo consequat veniam et. Aliqua sint ullamco
-          tempor fugiat minim duis labore cupidatat Lorem. Minim nulla
-          consectetur eiusmod ut commodo esse ad do enim aliqua Lorem magna eu.
-          Fugiat consectetur enim fugiat enim amet non ex nostrud culpa proident
-          aliqua. Do enim anim labore laboris.
+          <Language>EN</Language>
+          <SearchContainer>
+            <Input /> <Search style={{ color: "gray", fontSize: 16 }} />
+          </SearchContainer>
         </Left>
-        <Center>Center</Center>
-        <Right>Right</Right>
+        <Center>
+          <Logo>KUDA.</Logo>
+        </Center>
+        <Right>
+          <MenuItem>REGISTER</MenuItem>
+          <MenuItem>SIGN IN</MenuItem>
+          <MenuItem>
+            <Badge badgeContent={4} color="primary">
+              <ShoppingCartOutlined />
+            </Badge>
+          </MenuItem>
+        </Right>
       </Wrapper>
     </Container>
   );
